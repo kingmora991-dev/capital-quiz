@@ -1,0 +1,149 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2b5876, #4e4376);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.quiz-container {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  max-width: 550px;
+  width: 100%;
+  border-top: 4px solid #3498db;
+}
+
+h1 {
+  font-size: 22px;
+  margin-top: 0;
+  text-align: center;
+}
+
+#question-text {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.answer-btn {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  background: #f6f8fa;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.1s;
+}
+
+.answer-btn:hover {
+  background: #e9f2ff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.answer-btn.correct {
+  background: #d1f2d1;
+  border-color: #27ae60;
+}
+
+.answer-btn.wrong {
+  background: #ffd6d6;
+  border-color: #e74c3c;
+}
+
+#next-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+#next-btn:hover:enabled {
+  background: #2980b9;
+  transform: translateY(-1px);
+}
+
+#next-btn:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+#progress {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+#result {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  white-space: pre-line; /* عشان السطر الجديد فى الرسالة */
+}
+
+/* ألوان حسب النتيجة */
+.result-excellent {
+  color: #27ae60;
+}
+
+.result-good {
+  color: #f39c12;
+}
+
+.result-poor {
+  color: #e74c3c;
+}
+
+/* انيميشن احتفالى قوى */
+@keyframes strong-bounce {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-8px); }
+  50%  { transform: translateY(0); }
+  75%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+.celebrate-strong {
+  animation: strong-bounce 0.8s ease;
+  box-shadow: 0 0 25px rgba(46, 204, 113, 0.7);
+}
+
+/* احتفال هادى */
+@keyframes soft-bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+.celebrate-soft {
+  animation: soft-bounce 0.8s ease;
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+}
+
+/* انيميشن حزن بسيط */
+@keyframes sad-shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-4px); }
+  50%  { transform: translateX(4px); }
+  75%  { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.sad-shake {
+  animation: sad-shake 0.6s ease;
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.6);
+}
